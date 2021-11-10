@@ -13,6 +13,16 @@ let playerReady
 let ballInMotion;
 let brickPositions = fillBricksPosition(bricks)
 
+// setInterval(() => {
+//     let left =0
+//     startShakeAnimation()
+
+//     function startShakeAnimation() {
+
+//         ball.style.left = `${left+=5}%`
+//     }
+// }, 1100)
+
 function fillBricksPosition(bricks) {
     let brickPositions = []
     Array.from(bricks).forEach(brick => {
@@ -98,7 +108,7 @@ function checkCollision(element1, element2) {
     if (box1["top"] >= box2["top"] && box1["top"] <= box2["top"]) {
         return true
     }
-    
+
     if (box1["top"] >= box2["top"] && box1["top"] <= box2["top"]) {
         return true
     }
