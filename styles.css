@@ -12,7 +12,6 @@
     color: var(--txt-clr);
 }
 
-
 html,
 body {
     width: 100%;
@@ -29,19 +28,33 @@ body {
     box-sizing: inherit;
 }
 
-*:not(.player) {
+*:not(.player, .platform) {
     overflow: hidden;
 }
 
 .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: blue; */
+}
+
+.brick-container {
+    /* height: 100px; */
+    position: absolute;
+    /* background-color: red; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: calc(1% + 4em);
+    align-content: flex-start;
+    margin: 0 1vw;
+    top: calc(1% + 3em);
+    padding: 0;
 }
 
 p {
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.452), 0 0 5px white;
+    text-shadow: 0 0 2px rgba(146, 137, 137, 0.452), 0 0 5px white;
 }
 
 .score {
@@ -59,20 +72,30 @@ p {
 .player {
     position: absolute;
     bottom: 5%;
-    background: linear-gradient(90deg, pink, red);
-    width: 100px;
+    background:
+        linear-gradient(0deg, pink, red 80%);
+        /* radial-gradient(circle at center, red 0, blue, green 100%); */
+    width: 150px;
     height: 20px;
     border-radius: 10px;
+}
+
+.platform {
+    position: absolute;
+    bottom: 5%;
+    z-index: 1;
+    /* background-color: red; */
+    width: 100px;
+    height: 20px;
 }
 
 .ball {
     /* content: ''; */
     /* display: block; */
     position: absolute;
-    bottom: 100%;
+    bottom: 115%;
     left: 20%;
     background: skyblue;
-
     width: 20px;
     height: 20px;
     border-radius: 50%;
