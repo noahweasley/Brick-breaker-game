@@ -1,0 +1,120 @@
+:root {
+    user-select: none;
+    box-sizing: border-box;
+    --clr-dark: #1D2433;
+    --clr-darker: #171C28;
+    --clr-dark-content: #444d61;
+    --clr-light-content: #838892;
+    --txt-clr: #adbcdd;
+    font-size: calc(1vw + 0.7em);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+    color: var(--txt-clr);
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--clr-dark);
+    cursor: pointer;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+*:not(.player) {
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: calc(1% + 4em);
+}
+
+p {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.452), 0 0 5px white;
+}
+
+.score {
+    position: absolute;
+    top: 1%;
+    right: 5%;
+}
+
+.level {
+    position: absolute;
+    top: 1%;
+    left: 5%;
+}
+
+.player {
+    position: absolute;
+    bottom: 5%;
+    background: linear-gradient(90deg, pink, red);
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.ball {
+    /* content: ''; */
+    /* display: block; */
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    background: skyblue;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow:
+        0 0 10px skyblue,
+        0 0 20px skyblue;
+}
+
+.shadow {
+    position: absolute;
+    bottom: 90%;
+    left: 20%;
+    background: black;
+    width: 20px;
+    height: 5px;
+    border-radius: 50%;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+
+.brick {
+    /* position: absolute; */
+    width: 30px;
+    height: 20px;
+    background: greenyellow;
+    margin: 2px;
+    border-radius: 2px;
+    box-shadow:
+        0 0 10px skyblue,
+        0 0 20px skyblue;
+}
+
+.shake {
+    animation: shake 1s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+    from {
+        left: -10%;
+    }
+
+    to {
+        left: 90%;
+    }
+}
